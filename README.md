@@ -7,9 +7,8 @@
   Add your open source license, GitHub uses MIT license.
 -->
 
-# GitHub Pages
+# Cafe Sales Dashboard Project
 
-_Create a site or blog from your GitHub repositories with GitHub Pages._
 
 </header>
 
@@ -21,11 +20,47 @@ _Create a site or blog from your GitHub repositories with GitHub Pages._
   Encourage users to open new tabs for steps!
 -->
 
-## Step 1: Enable GitHub Pages
+## Overview
 
-_Welcome to GitHub Pages and Jekyll :tada:!_
+This project uses the following cafe sales data set *INSTERT DATA SET* to investigate how seasonal trends affect the sales of different categoreis of items. 
 
-The first step is to enable GitHub Pages on this [repository](https://docs.github.com/en/get-started/quickstart/github-glossary#repository). When you enable GitHub Pages on a repository, GitHub takes the content that's on the main branch and publishes a website based on its contents.
+Throughout the project we find that
+
+## Data Cleaning:
+
+This dataset was intentionally created with a lot of missing values and errors to help practice data cleaning techniques. Firstly, the names of most columns were changed to use underscores instead of spaces, making selecting columns a lot easier.
+
+**Transaction_ID:** The Transaction_ID column was not edited or changed since every row had a distinct value indicating that the data in this column was clean and valid.
+
+**Item:** 
+
+**Quantity:**
+
+**Price_Per_Unit:**
+
+**Total_Spent:**
+
+**Payment_Method:**
+
+**Location:**
+
+***Transaction_Date:**
+
+## Exploratory Data Analysis:
+### Univariate Analysis:
+
+
+### Bivariate Analysis:
+
+
+### Multivariate Analysis:
+
+## Visualizations:
+
+
+## Conclusions:
+
+
 
 ### :keyboard: Activity: Enable GitHub Pages
 
