@@ -28,23 +28,25 @@ Throughout the project we find that
 
 ## Data Cleaning:
 
-This dataset was intentionally created with a lot of missing values and errors to help practice data cleaning techniques. Firstly, the names of most columns were changed to use underscores instead of spaces, making selecting columns a lot easier.
+This dataset was intentionally created with a lot of missing values and errors to help practice data cleaning techniques. Firstly, the names of most columns were changed to use underscores instead of spaces, making selecting columns a lot easier. Then all values that were either empty, 'UNKNOWN' or 'ERROR' were changed to NULL to facilitate the data cleaning process
 
 **Transaction_ID:** The Transaction_ID column was not edited or changed since every row had a distinct value indicating that the data in this column was clean and valid.
 
-**Item:** 
+**Item:** The Item column was first updated according to its Price_Per_Unit column, matching each item with its appropriate price. This method worked for prices associated to 1 item (cookie, tea, coffee and salad), but for prices associated to 2 items (cake, juice, smoothie and sandwich) a different approach was used. For such items and prices, the percentage distribution of each item with the same Price_Per_Unit was calculated. That percentage was then multiplied to the number of NULL values with the associated Price_Per_Unit to determine how many of those NULL values would be assigned the associated item. For example, since cake and juice both cost $3, the percentage of orders where the Price_Per_Unit was 3 was calculated to see what percentage was cake and what percentage was juice. That percentage was then multiplied by the number of NULL values with Price_Per_Unit = 3 to determine how many of those would be assigned cake and how many would be assigned juice.
 
-**Quantity:**
+**Quantity:** The Quantity column was calculated by dividing Total_Spent by Price_Per_Unit.
 
-**Price_Per_Unit:**
+**Price_Per_Unit:** The Price_Per_Unit column was first updated according to the item, matching each price to its appropriate item. When the item cell was NULL, Price_Per_Unit was calculated by dividing Total_Spent by Quantity, assuming those values were also not NULL.
 
-**Total_Spent:**
+**Total_Spent:** The Total_Spent column was calculated using by multiplying Quantity by Price_Per_Unit.
 
 **Payment_Method:**
 
 **Location:**
 
-***Transaction_Date:**
+**Transaction_Date:** The Transaction_Date column was filled using the backwards fill method according to the Transaction_ID column.
+
+After the data was populated using these techniques, the remaining columns containing multiple NULL values were deleted.
 
 ## Exploratory Data Analysis:
 ### Univariate Analysis:
@@ -55,6 +57,7 @@ This dataset was intentionally created with a lot of missing values and errors t
 
 ### Multivariate Analysis:
 
+
 ## Visualizations:
 
 
@@ -62,27 +65,7 @@ This dataset was intentionally created with a lot of missing values and errors t
 
 
 
-### :keyboard: Activity: Enable GitHub Pages
 
-1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
-1. Under your repository name, click **Settings**.
-1. Click **Pages** in the **Code and automation** section.
-1. Ensure "Deploy from a branch" is selected from the **Source** drop-down menu, and then select `main` from the **Branch** drop-down menu.
-1. Click the **Save** button.
-1. Wait about _one minute_ then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
-   > Turning on GitHub Pages creates a deployment of your repository. GitHub Actions may take up to a minute to respond while waiting for the deployment. Future steps will be about 20 seconds; this step is slower.
-   > **Note**: In the **Pages** of **Settings**, the **Visit site** button will appear at the top. Click the button to see your GitHub Pages site.
-
-<footer>
-
-<!--
-  <<< Author notes: Footer >>>
-  Add a link to get support, GitHub status page, code of conduct, license link.
--->
-
----
-
-Get help: [Post in our discussion board](https://github.com/orgs/skills/discussions/categories/github-pages) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
 
 &copy; 2023 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
 
